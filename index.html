@@ -1,0 +1,985 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+ <link rel="icon" type="image/png" href="images/favicon.jpeg">
+ <link rel="stylesheet" href="styles.css"
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduSpherix - Innovative School Management System</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'deep-blue': '#1E3A8A',
+                        'brand-orange': '#F97316',
+                        'brand-green': '#16A34A',
+                        'brand-purple': '#6D28D9',
+                    }
+                }
+            }
+        }
+    </script>
+  
+ 
+</head>
+<!-- Intro Animation Overlay -->
+<div id="introScreen" class="fixed inset-0 bg-white flex items-center justify-center z-[9999] transition-all duration-1000">
+    <img src="logo.jpeg" 
+         class="w-96 animate-pulse transition-all duration-1000"
+         id="introLogo">
+</div>
+
+<body class="bg-gray-50 text-gray-900 font-sans">
+    <!-- Sticky Navbar -->
+     
+    <nav class="sticky top-0 z-50 bg-white shadow-md lg-50">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4 gap-3">
+                <div class="flex items-center">
+                    <a href="#" class="text-2xl font-bold">
+                        <span class="text-deep-blue">Edu</span><span class="text-brand-orange">Spherix</span>
+                    </a>
+                </div>
+                <div class="flex items-center justify-between w-full">
+
+    <!-- Nav Links -->
+    <div class="hidden md:flex space-x-4 ml-8">
+
+        <a href="#home" class="nav-btn">Home</a>
+
+        <a href="#features" class="nav-btn">Features</a>
+
+        <a href="#modules" class="nav-btn">Modules</a>
+
+        <a href="#pricing" class="nav-btn">Pricing</a>
+
+        <a href="#" id="contactBtn" class="nav-btn">Contact</a>
+
+        <div id="contactDropdown" class="contact-dropdown">
+            <p>📞 +91 8123286405</p>
+            <p>📧support@eduspherix.co.in</p>
+        </div>
+
+    </div>
+
+    <!-- Book Demo Button -->
+    <div class="flex items-center space-x-4">
+        <a href="#book-demo"
+           class="bg-brand-orange text-white px-4 py-2 rounded-lg hover:bg-orange-600 transition">
+           Book Demo
+        </a>
+    </div>
+
+</div>
+                    <div class="md:hidden">
+                        <button class="text-gray-700 focus:outline-none" id="mobile-menu-button">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="md:hidden hidden" id="mobile-menu">
+  <div class="px-4 pt-4 pb-4 space-y-3 bg-gray-50">
+
+    <!-- Home -->
+    <a href="#home"
+       class="mobile-btn">
+       Home
+    </a>
+
+    <!-- Features -->
+    <a href="#features"
+       class="mobile-btn">
+       Features
+    </a>
+
+    <!-- Modules -->
+    <a href="#modules"
+       class="mobile-btn">
+       Modules
+    </a>
+
+    <!-- Pricing -->
+    <a href="#pricing"
+       class="mobile-btn">
+       Pricing
+    </a>
+
+    <!-- Contact Button -->
+    <a href="#contact" class="mobile-btn">Contact</a>
+
+<div id="contactDropdown" class="contact-dropdown">
+  <p>📞 +91 8123286405</p>
+  <p>📧 support@eduspherix.co.in</p>
+</div>
+
+    
+  </div>
+</div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="text-white py-20">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2">
+             <h1 class="text-4xl md:text-6xl font-extrabold mb-6 
+           bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-500 
+           bg-clip-text text-transparent 
+           drop-shadow-[0_0_20px_rgba(59,130,246,0.7)]">
+  Innovative Digital Solution for Modern Schools
+</h1>   <p class="text-lg md:text-xl mb-8">Streamline school operations with our comprehensive management system. Enhance efficiency, improve communication, and scale effortlessly for schools of all sizes.</p>
+                <a href="#bookDemo" 
+   class="inline-block bg-orange-500 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-orange-600 transition duration-300">
+   Request Free Demo
+</a>
+            </div>
+	<div class="md:w-1/2 mt-3 md:mt-0">
+    <img 
+    id="heroImage"
+    src="images/logo.jpeg"
+    alt="EduSpherix Logo"
+    class="w-72 md:w-96 h-auto mx-auto rounded-lg shadow-lg"
+>
+</div>
+
+      
+
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="py-20 bg-white reveal">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center mb-10 text-deep-blue">About EduSpherix</h2>
+            <p class="text-lg text-center max-w-3xl mx-auto">EduSpherix is a cutting-edge School Management System designed to automate and digitize school operations. From seamless parent communication to scalable infrastructure, we empower educational institutions to focus on what matters most – nurturing young minds. Our cloud-based platform ensures security, ease of use, and affordability, making it ideal for Indian schools.</p>
+        </div>
+        <div class="text-center mt-8">
+  <button id="openVideoBtn"
+    class="know-more-btn px-8 py-3 rounded-full text-white font-semibold">
+    ▶ Click Here To Know More
+  </button>
+</div>
+    </section>
+    <!-- Video Popup -->
+<div id="videoPopup" class="fixed inset-0 bg-black/70 flex items-center justify-center z-[9999] hidden">
+
+  <div class="relative bg-white rounded-xl p-4 w-[90%] max-w-3xl">
+
+    <!-- Close Button -->
+    <button id="closeVideoBtn"
+      class="absolute -top-4 -right-4 bg-red-500 text-white w-10 h-10 rounded-full text-xl font-bold">
+      ✕
+    </button>
+
+    <!-- Your Video -->
+    <video id="aboutVideo" controls class="w-full rounded-lg">
+      <source src="about-video.mp4" type="video/mp4">
+      Your browser does not support video.
+    </video>
+
+  </div>
+</div>
+
+    <!-- Features Section -->
+            <section id="features" class="py-5 bg-gray-100 reveal">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-3xl font-bold text-center mb-10 text-deep-blue">Key Features</h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+            <!-- Feature 1 -->
+           <div class="feature-tab orange">
+    <div class="top-bg"></div>
+    <div class="icon">🎓</div>
+    <h3>Student Management</h3>
+    <p>Comprehensive student profiles with easy enrollment and tracking.</p>
+</div>
+
+            <!-- Feature 2 -->
+            <div class="feature-tab purple">
+                <div class="top-bg"></div>
+                <div class="icon">📅</div>
+                <h3>Attendance Tracking</h3>
+                <p>Real-time attendance monitoring with automated reports.</p>
+                            </div>
+
+            <!-- Feature 3 -->
+            <div class="feature-tab blue">
+                <div class="top-bg"></div>
+                <div class="icon">👨‍👩‍👧</div>
+                <h3>Parent Portal</h3>
+                <p>Direct communication channel for parents.</p>
+                            </div>
+
+            <!-- Feature 4 -->
+            <div class="feature-tab orange">
+                <div class="top-bg"></div>
+                <div class="icon">📊</div>
+                <h3>Marks & Reports</h3>
+                <p>Generate academic reports and analytics.</p>
+                            </div>
+
+            <!-- Feature 5 -->
+            <div class="feature-tab purple">
+                <div class="top-bg"></div>
+                <div class="icon">💳</div>
+                <h3>Fees Management</h3>
+                <p>Streamlined fee collection and tracking.</p>
+                          </div>
+
+            <!-- Feature 6 -->
+            <div class="feature-tab blue">
+                <div class="top-bg"></div>
+                <div class="icon">🚌</div>
+                <h3>Transport</h3>
+                <p>Manage transport routes and holidays.</p>
+                            </div>
+
+        </div>
+    </div>
+</section>
+<!-- Modules Section -->
+    <section id="modules" class="py-20 bg-gray-100 reveal">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center mb-10 text-deep-blue">Our Modules</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="module-card">
+      <div class="module-top blue">STEP 01</div>
+      <div class="module-content">
+        <h3>Dashboard</h3>
+        <p>The dashboard provides a centralized overview of all school activities in real time. It displays key information such as student strength, attendance status, fee summaries, and recent updates.</p>
+
+        <div class="module-icon">📊</div>
+      </div>
+    </div>
+<div class="module-card">
+      <div class="module-top purple">STEP 02</div>
+      <div class="module-content">
+        <h3>Teacher Module</h3>
+        <p>The Teacher Module helps educators manage their daily academic activities efficiently. It allows teachers to mark attendance, update student performance, manage timetables, and share assignments or announcements. </p>
+
+        <div class="module-icon">👩‍🏫</div>
+      </div>
+    </div>          
+     <div class="module-card">
+      <div class="module-top orange">STEP 03</div>
+      <div class="module-content">
+        <h3>Student Module</h3>
+        <p>The Student Module provides a complete view of academic and personal information in one place. Students can check their attendance, timetable, assignments, exam results, and important announcements easily.</p>
+
+        <div class="module-icon">👨‍🎓</div>
+      </div>
+    </div>
+
+              <div class="module-card">
+      <div class="module-top green">STEP 04</div>
+      <div class="module-content">
+        <h3>Attendance</h3>
+        <p>The Attendance Module enables quick and accurate tracking of daily student attendance. It provides real-time records, absentee reports, and attendance summaries for better monitoring.</p>
+
+        <div class="module-icon">📅</div>
+      </div>
+    </div>
+
+             <div class="module-card">
+      <div class="module-top blue">STEP 05</div>
+      <div class="module-content">
+        <h3>Time Table</h3>
+        <p>The Timetable Module helps schools organize and manage class schedules efficiently. It provides a clear view of subject timings, teacher allocations, and daily routines for students and staff.</p>
+
+        <div class="module-icon">⏰</div>
+      </div>
+    </div>
+                             <div class="module-card">
+      <div class="module-top purple">STEP 06</div>
+      <div class="module-content">
+        <h3>Marks</h3>
+        <p>The Marks Module allows teachers to enter and manage student exam scores quickly and accurately. It generates detailed report cards, performance analysis, and progress summaries.</p>
+
+        <div class="module-icon">📝</div>
+      </div>
+    </div>
+
+               <div class="module-card">
+      <div class="module-top orange">STEP 07</div>
+      <div class="module-content">
+        <h3>Fees</h3>
+        <p>The Fees Module helps schools manage fee collection and payment records efficiently. It tracks paid and pending fees, generates receipts, and provides clear financial reports.</p>
+
+        <div class="module-icon">💳</div>
+      </div>
+    </div>
+<div class="module-card">
+      <div class="module-top green">STEP 08</div>
+      <div class="module-content">
+        <h3>Bus Service</h3>
+        <p>The Transport Module helps schools manage student transportation safely and efficiently. It maintains bus routes, vehicle details, driver information, and student allocations.</p>
+
+        <div class="module-icon">🚌</div>
+      </div>
+    </div>                           </div>
+        </div>
+    </section>
+
+    <!-- Animated Stats Counter Section -->
+    <section class="py-20 bg-gradient-to-r from-brand-green to-deep-blue text-white">
+	
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl font-bold mb-10">Our Impact</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <div class="text-5xl font-bold counter" data-target="15">0</div>
+                    <p class="text-xl mt-4">Modules</p>
+                </div>
+                <div>
+                    <div class="text-5xl font-bold counter" data-target="1000">0</div>
+                    <p class="text-xl mt-4">Student Capacity</p>
+                </div>
+              <div class="text-center">
+    <h2 class="text-6xl font-bold">
+        <span class="counter" data-target="24">0</span>
+        <span class="text-6xl">/7</span>
+    </h2>
+    <p class="mt-2">Support</p>
+</div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+<section class="py-5 reveal">
+
+    <h2 id="whyHeading" class="text-center text-4xl font-bold mb-16  text-deep-blue">
+        Why Choose EduSpherix?
+    </h2>
+
+    <!-- Emoji Row -->
+    <div id="emojiRow"
+         class="flex justify-around text-6xl
+                transform -translate-y-38 opacity-0
+                transition-all duration-1000 ease-out">
+
+            </div>
+
+</section>
+
+                                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="text-center">
+                    <div class="text-6xl text-brand-green mb-4">🔒</div>
+                    <h3 class="text-xl font-semibold mb-2">Security</h3>
+                    <p>Top-tier data protection and compliance.</p>
+                </div>
+                <div class="text-center">
+                    <div class="text-6xl text-brand-purple mb-4">👩🏻‍💻</div>
+                    <h3 class="text-xl font-semibold mb-2">Digital system</h3>
+                    <p>Accessible from anywhere, anytime.</p>
+                </div>
+                <div class="text-center">
+                    <div class="text-6xl text-brand-orange mb-4">👌</div>
+                    <h3 class="text-xl font-semibold mb-2">Easy to Use</h3>
+                    <p>Intuitive interface for all users.</p>
+                </div>
+                <div class="text-center">
+                    <div class="text-6xl text-deep-blue mb-4">💰</div>
+                    <h3 class="text-xl font-semibold mb-2">Affordable</h3>
+                    <p>Tailored pricing for Indian schools.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+     <section id="pricing" class="py-10 bg-gray-100 relative">
+    <section class="py-20 bg-gray-100 reveal">
+  <div class="max-w-6xl mx-auto px-6">
+
+    <!-- Heading -->
+    <h2 class="text-4xl font-bold text-center text-blue-900 mb-16">
+      Pricing Plans
+    </h2>
+
+    <!-- Pricing Cards -->
+    <div class="grid md:grid-cols-3 gap-8">
+
+      <div class="pricing-card basic-card backdrop-blur-xl bg-white/70 border border-white/40 rounded-2xl shadow-xl overflow-hidden relative transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl">
+
+    <!-- Tag -->
+    <div class="absolute top-4 left-4 bg-blue-600 text-white text-xs px-3 py-1 rounded-full">
+        Limited Offer
+    </div>
+
+    <!-- Header -->
+    <div class="bg-blue-500/50 text-black text-center py-6">
+        <h2 class="text-4xl font-bold">₹2100</h2>
+        <p class="text-sm">/month</p>
+        <h3 class="text-xl font-semibold mt-2">BASIC</h3>
+    </div>
+
+    <!-- Body -->
+    <div class="p-6">
+        <ul class="space-y-3 mt-4 text-sm">
+
+            <li class="flex items-center">
+                <span class="text-blue-600 mr-2">✔</span>
+                Student Management
+            </li>
+
+            <li class="flex items-center">
+                <span class="text-blue-600 mr-2">✔</span>
+                Teacher Management
+            </li>
+
+            <li class="flex items-center ">
+                <span class="text-blue-600 mr-2">✔</span>
+                Attendance Tracking
+            </li>
+
+            <li class="flex items-center ">
+                <span class="text-blue-600 mr-2">✔</span>
+                Fee Management
+            </li>
+
+            <li class="flex items-center ">
+                <span class="text-red-400 mr-2">✔</span>
+                Bus Management
+            </li>
+
+<li class="flex items-center">
+                <span class="text-yellow-600 mr-2">✔</span>
+                Parent Portal Access
+            </li>
+
+
+        </ul>
+
+     <button class="choosePlanBtn bg-blue-600 text-white px-6 py-2 rounded-lg w-full mt-6 hover:bg-blue-700 transition"
+data-plan="Basic"
+data-color="#dbeafe">
+Choose Plan
+</button>
+
+    </div>
+</div>
+
+      <!-- Standard Plan (Highlighted) --> <!--Sufiyan adding standard-card and each-->
+     <div class="pricing-card standard-card backdrop-blur-xl bg-white/70 border border-white/40 rounded-2xl shadow-xl overflow-hidden relative transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl">
+
+    <!-- Tag -->
+    <div class="absolute top-4 left-4 bg-orange-600 text-white text-xs px-3 py-1 rounded-full">
+        Popular Offer
+    </div>
+
+    <!-- Header -->
+    <div class="bg-orange-500/50 text-black text-center py-6">
+        <h2 class="text-4xl font-bold">₹25000</h2>
+        <p class="text-sm">/year</p>
+        <h3 class="text-xl font-semibold mt-2">STANDARD</h3>
+    </div>
+
+    <!-- Body -->
+    <div class="p-6">
+        <ul class="space-y-3 mt-4 text-sm">
+
+            <li class="flex items-center">
+                <span class="text-orange-600 mr-2">✔</span>
+                Student Management
+            </li>
+
+            <li class="flex items-center">
+                <span class="text-orange-600 mr-2">✔</span>
+                Teacher Management
+            </li>
+
+            <li class="flex items-center">
+                <span class="text-orange-600 mr-2">✔</span>
+                Attendance Tracking
+            </li>
+
+            <li class="flex items-center">
+                <span class="text-orange-600 mr-2">✔</span>
+                Fee Management
+            </li>
+
+            <li class="flex items-center">
+                <span class="text-orange-600 mr-2">✔</span>
+                Bus Management
+            </li>
+	<li class="flex items-center">
+                <span class="text-yellow-600 mr-2">✔</span>
+                Parent Portal Access
+            </li>
+
+
+        </ul>
+
+       <button class="choosePlanBtn bg-orange-600 text-white px-6 py-2 rounded-lg w-full mt-6 hover:bg-orange-700 transition"
+data-plan="Standard"
+data-color="#ffedd5">
+Choose Plan
+</button>
+    </div>
+</div>
+
+      <!-- Premium Plan -->
+      <div class="pricing-card premium-card backdrop-blur-xl bg-white/70 border border-white/40 rounded-2xl shadow-xl overflow-hidden relative transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl">
+
+    <!-- Tag -->
+    <div class="absolute top-4 left-4 bg-yellow-600 text-white text-xs px-3 py-1 rounded-full">
+        Limited
+    </div>
+
+    <!-- Header -->
+    <div class="bg-yellow-500/50 text-black text-center py-6">
+        <h2 class="text-4xl font-bold">Custom</h2>
+        <p class="text-sm">/year</p>
+        <h3 class="text-xl font-semibold mt-2">PREMIUM</h3>
+    </div>
+
+    <!-- Body -->
+    <div class="p-6">
+        <ul class="space-y-3 mt-4 text-sm">
+
+            <li class="flex items-center">
+                <span class="text-yellow-600 mr-2">✔</span>
+                Student Management
+            </li>
+
+            <li class="flex items-center">
+                <span class="text-yellow-600 mr-2">✔</span>
+                Teacher Management
+            </li>
+
+            <li class="flex items-center">
+                <span class="text-yellow-600 mr-2">✔</span>
+                Attendance Tracking
+            </li>
+
+            <li class="flex items-center">
+                <span class="text-yellow-600 mr-2">✔</span>
+                Fee Management
+            </li>
+
+            <li class="flex items-center">
+                <span class="text-yellow-600 mr-2">✔</span>
+                Bus Management
+            </li>
+
+            <li class="flex items-center">
+                <span class="text-yellow-600 mr-2">✔</span>
+                Parent Portal Access
+            </li>
+
+        </ul>
+
+        <button class="choosePlanBtn bg-yellow-600 text-white px-6 py-2 rounded-lg w-full mt-6 hover:bg-yellow-700 transition"
+data-plan="Premium"
+data-color="#fef9c3">
+Choose Plan
+</button>
+    </div>
+</div>
+
+    </div>
+  </div>
+<!-- Popup Overlay -->
+<!-- Pricing Popup -->
+<div id="planPopup"
+     class="absolute inset-0 flex items-center justify-center bg-black/40 z-50"
+     style="display:none;">
+
+  <div id="popupContent"
+       class="bg-white rounded-xl shadow-2xl p-6 w-[90%] max-w-md relative animate-fadeIn">
+
+    <!-- Close Button -->
+    <button id="closePopup"
+            class="absolute top-3 right-3 text-xl font-bold">
+      ✕
+    </button>
+
+    <h2 id="popupTitle" class="text-2xl font-bold mb-4"></h2>
+
+    <div id="popupBody" class="text-gray-700"></div>
+
+  </div>
+</div>
+</section>
+
+
+<!-- Click Selection Script -->
+
+
+
+    <!-- Book demo section --> <!--Sufiyan:changing entire conatct to google form-->
+<section id="bookDemo"class="py-10 ">
+    <section id="contact" class="py-10 bg-gray-100 reveal"> 
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"> <!--Sufiyan: changing in form-->
+           <!-- Book Demo Section -->
+<section id="book-demo" class="py-20 bg-white scroll-mt-24">
+  <div class="max-w-3xl mx-auto">
+    <h2 class="text-3xl font-bold text-center mb-8 text-deep-blue">Book Your Free Demo</h2>
+    <div class="flex justify-center">
+      <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdg-CX9E36h6bfsKEQZzqpbvsD9ckiai0kbxWx1IfUbn-btSg/viewform?embedded=true" width="640" height="992" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+    </div>
+  </div>
+</section>
+
+    <footer class="bg-blue-900 text-white py-6">
+  <div class="max-w-6xl mx-auto px-6 text-center">
+
+    <!-- Brand -->
+    <h2 class="text-2xl font-semibold mb-2">EduSpherix</h2>
+    <p class="text-sm mb-3">Innovative School Management</p>
+
+    <!-- Date & Time -->
+    <p id="dateTime" class="text-sm font-medium"></p>
+
+    <!-- Copyright -->
+    <p class="text-xs mt-3 text-gray-300">
+      © 2026 EduSpherix. All Rights Reserved.
+    </p>
+
+  </div>
+</footer>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const counters = document.querySelectorAll(".counter");
+
+    counters.forEach(counter => {
+        const target = +counter.getAttribute("data-target");
+        let count = 0;
+        const speed = 20;
+
+        const updateCounter = () => {
+            const increment = target / 100;
+            count += increment;
+
+            if (count < target) {
+                counter.innerText = Math.ceil(count);
+                setTimeout(updateCounter, speed);
+            } else {
+                counter.innerText = target;
+            }
+        };
+
+        updateCounter();
+    });
+});
+</script>
+
+<script>
+window.addEventListener("load", function () {
+    const image = document.getElementById("heroImage");
+
+    // Make image fullscreen immediately
+    image.classList.add("fullscreen");
+
+    // After 2 seconds, return to original position
+    setTimeout(() => {
+        image.classList.remove("fullscreen");
+    }, 2000);
+});
+</script>
+
+
+<script>
+window.addEventListener("load", function () {
+    const intro = document.getElementById("introScreen");
+    const logo = document.getElementById("introLogo");
+
+    setTimeout(() => {
+        logo.classList.add("scale-50", "opacity-0");
+        intro.classList.add("opacity-0");
+
+        setTimeout(() => {
+            intro.style.display = "none";
+        }, 1000);
+
+    }, 2000);
+});
+</script>
+<script>
+function updateDateTime() {
+  const now = new Date();
+
+  const options = { 
+    weekday: 'long', 
+    year: 'numeric', 
+    month: 'long', 
+    day: 'numeric' 
+  };
+
+  const date = now.toLocaleDateString('en-IN', options);
+  const time = now.toLocaleTimeString('en-IN');
+
+  document.getElementById("dateTime").innerHTML =
+    date + " | " + time;
+}
+
+setInterval(updateDateTime, 1000);
+updateDateTime();
+</script>
+<script>
+function openModal(title, desc, bg) {
+    document.getElementById("featureModal").style.display = "flex";
+    document.getElementById("modalTitle").innerText = title;
+    document.getElementById("modalDesc").innerText = desc;
+    document.getElementById("modalHeader").style.background = bg;
+}
+
+function closeModal() {
+    document.getElementById("featureModal").style.display = "none";
+}
+
+/* Close when clicking outside */
+window.onclick = function(e) {
+    let modal = document.getElementById("featureModal");
+    if (e.target === modal) {
+        modal.style.display = "none";
+    }
+}
+</script>
+
+<!-- Popup Modal -->
+<div id="featureModal" class="modal">
+    <div class="modal-content">
+        <span class="close-btn" onclick="closeModal()">&times;</span>
+        
+        <div id="modalHeader" class="modal-header">
+            <div id="modalIcon" class="modal-icon"></div>
+        </div>
+
+        <h2 id="modalTitle"></h2>
+        <p id="modalDesc"></p>
+    </div>
+</div>
+<script>
+function toggleMenu() {
+    document.getElementById("navMenu").classList.toggle("active");
+}
+</script>
+<script>
+const reveals = document.querySelectorAll(".reveal");
+
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("active");
+    }
+  });
+}, { threshold: 0.2 });
+
+reveals.forEach(el => {
+  revealObserver.observe(el);
+});
+</script>
+
+<!-- Popup Overlay -->
+<div id="planPopup"
+     class="fixed top-0 left-0 w-full h-full bg-black/50 z-[9999]"
+     style="display:none;">
+
+  <div id="popupContent"
+       class="bg-white rounded-xl shadow-2xl p-6 w-[90%] max-w-md relative"
+       style="position:absolute; top:50%; left:50%; transform:translate(-50%, -50%);">
+
+    <!-- Close Button -->
+    <button id="closePopup"
+            class="absolute top-3 right-3 text-xl font-bold">
+      ✕
+    </button>
+
+    <h2 id="popupTitle" class="text-2xl font-bold mb-4"></h2>
+
+    <div id="popupBody" class="text-gray-700"></div>
+
+  </div>
+</div>
+<script>
+
+document.addEventListener("DOMContentLoaded", function () {
+
+  const buttons = document.querySelectorAll(".choosePlanBtn");
+  const popup = document.getElementById("planPopup");
+  const popupContent = document.getElementById("popupContent");
+  const popupTitle = document.getElementById("popupTitle");
+  const popupBody = document.getElementById("popupBody");
+  const closeBtn = document.getElementById("closePopup");
+
+  const planDetails = {
+    Basic: `
+      ₹2100 / month<br>
+      ✔Teacher Management<br>
+	✔Attendance Tracking<br>
+	✔Fee Management<br>
+	✔Bus Management<br>
+	✔Parent Portal Access<br>
+    `,
+    Standard: `
+      ₹2500 / year<br>
+      ✔Teacher Management<br>
+	✔Attendance Tracking<br>
+	✔Fee Management<br>
+	✔Bus Management<br>
+	✔Parent Portal Access<br>
+    `,
+    Premium: `
+      Custom / year<br>
+	✔ All Features Included<br>
+	✔Teacher Management<br>
+	✔Attendance Tracking<br>
+	✔Fee Management<br>
+	✔Bus Management<br>
+	✔Parent Portal Access<br>
+    `};
+
+  buttons.forEach(button => {
+    button.addEventListener("click", () => {
+      const plan = button.dataset.plan;
+      const color = button.dataset.color;
+
+      popup.style.display = "flex";   // show popup
+      popupContent.style.background = color;
+      popupTitle.innerText = plan + " Plan";
+      popupBody.innerHTML = planDetails[plan];
+    });
+  });
+
+  closeBtn.addEventListener("click", () => {
+    popup.style.display = "none";
+  });
+
+  popup.addEventListener("click", (e) => {
+    if (e.target === popup) {
+      popup.style.display = "none";
+    }
+  });
+
+});
+</script>
+<script>
+document.getElementById("menu-toggle").onclick = function() {
+    document.getElementById("nav-links").classList.toggle("active");
+};
+</script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const menuBtn = document.getElementById("mobile-menu-button");
+    const mobileMenu = document.getElementById("mobile-menu");
+
+    menuBtn.addEventListener("click", function () {
+        mobileMenu.classList.toggle("hidden");
+    });
+});
+</script>
+<script>
+const contactBtn = document.getElementById("contactBtn");
+const contactBtnMobile = document.getElementById("contactBtnMobile");
+
+const contactDropdown = document.getElementById("contactDropdown");
+const contactDropdownMobile = document.getElementById("contactDropdownMobile");
+
+function toggleDropdown(e, dropdown) {
+    e.preventDefault();
+    dropdown.classList.toggle("show");
+}
+
+if (contactBtn) {
+    contactBtn.addEventListener("click", (e) => {
+        toggleDropdown(e, contactDropdown);
+    });
+}
+
+if (contactBtnMobile) {
+    contactBtnMobile.addEventListener("click", (e) => {
+        toggleDropdown(e, contactDropdownMobile);
+    });
+}
+</script>
+<!-- Floating Buttons -->
+<!-- Floating Contact Buttons (Global) -->
+<a href="tel:+918861639473" class="float-call" title="Call Us">
+    📞
+</a>
+
+<a href="https://wa.me/918861639473?text=Hello%20I%20want%20a%20demo%20of%20EduSpherix"
+   class="float-whatsapp"
+   target="_blank"
+   title="WhatsApp">
+    💬
+</a></div>
+<!-- Three.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+
+<!-- Vanta Birds -->
+<script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.birds.min.js"></script>
+
+<script>
+VANTA.BIRDS({
+  el: "#home",   // we will connect this to your hero section
+  mouseControls: true,
+  touchControls: true,
+  gyroControls: false,
+  minHeight: 200.00,
+  minWidth: 200.00,
+  scale: 1.00,
+  scaleMobile: 1.00,
+  backgroundColor: 0x0f0c29
+})
+</script>
+<script>
+const openBtn = document.getElementById("openVideoBtn");
+const videoPopup = document.getElementById("videoPopup");
+const closeBtn = document.getElementById("closeVideoBtn");
+const video = document.getElementById("aboutVideo");
+
+openBtn.addEventListener("click", () => {
+  videoPopup.classList.remove("hidden");
+  video.play();
+});
+
+closeBtn.addEventListener("click", () => {
+  videoPopup.classList.add("hidden");
+  video.pause();
+  video.currentTime = 0;
+});
+
+videoPopup.addEventListener("click", (e) => {
+  if (e.target === videoPopup) {
+    videoPopup.classList.add("hidden");
+    video.pause();
+    video.currentTime = 0;
+  }
+});
+</script>
+<script>
+const contactBtn = document.getElementById("contactBtnMobile");
+const contactDropdown = document.getElementById("contactDropdownMobile");
+
+contactBtn.addEventListener("click", function () {
+  contactDropdown.classList.toggle("hidden");
+  contactBtn.classList.toggle("active");
+});
+</script>
+
+<script>
+const mobileBtns = document.querySelectorAll(".mobile-btn");
+
+mobileBtns.forEach(btn => {
+  btn.addEventListener("click", function () {
+
+    mobileBtns.forEach(b => b.classList.remove("bg-orange-500","text-white"));
+
+    this.classList.add("bg-orange-500","text-white");
+  });
+});
+</script>
+</body>
+</html>
