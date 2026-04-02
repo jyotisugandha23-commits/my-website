@@ -4,173 +4,217 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EduSpherix - Terms and Conditions</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --primary-blue: #0056b3;
-            --accent-orange: #f39200;
-            --text-dark: #1a1a1a;
-            --text-muted: #4a4a4a;
-            --bg-light: #fdfdfb;
-        }
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+        :root {
+            --primary-blue: #1a3a6b;
+            --accent-orange: #f39223;
+            --text-dark: #1a1a1a;
+            --text-muted: #666666;
+            --bg-cream: #fdfaf0;
         }
 
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #e0e5ec;
+            background-color: #e5e5e5;
+            margin: 0;
+            padding: 40px 0;
             display: flex;
             justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            padding: 20px;
         }
 
-        /* Poster Container */
-        .poster {
-            width: 100%;
-            max-width: 700px;
-            background: var(--bg-light);
-            border-radius: 20px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-            overflow: hidden;
+        .document-card {
+            width: 800px;
+            background-color: var(--bg-cream);
+            border-radius: 24px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.12);
             position: relative;
-            padding-bottom: 120px; /* Space for footer waves */
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
         }
 
-        /* Header Styles */
+        /* --- HEADER SECTION --- */
         .header {
-            padding: 40px 40px 20px 40px;
-            text-align: left;
+            padding: 40px 60px 10px 60px;
+            display: flex;
+            justify-content: space-between; /* Pushes address to the right */
+            align-items: flex-start;
         }
 
-        .logo {
-            width: 250px; /* Adjust size as needed */
-            height: auto;
-            margin-bottom: 5px;
+        .logo-group {
+            display: flex;
+            align-items: center;
+            gap: 15px;
         }
 
-        .main-heading {
-            font-size: 2.2rem;
+        .logo-img {
+            height: 65px; /* Adjust height to fit your logo perfectly */
+            width: auto;
+        }
+
+        .logo-text h1 {
+            font-size: 38px;
+            margin: 0;
+            color: var(--primary-blue);
             font-weight: 700;
-            color: var(--text-dark);
-            border-bottom: 2px solid #eee;
-            padding-bottom: 5px;
-            margin-bottom: 30px;
+            letter-spacing: -1px;
+            line-height: 0.9;
         }
 
-        /* Content Sections */
-        .content {
-            padding: 0 45px;
+        .logo-text h1 span {
+            color: var(--accent-orange);
         }
 
-        .term-item {
-            margin-bottom: 25px;
-        }
-
-        .term-item h2 {
-            font-size: 1.15rem;
-            font-weight: 700;
-            color: var(--text-dark);
-            margin-bottom: 6px;
-        }
-
-        .term-item p {
-            font-size: 0.95rem;
-            line-height: 1.6;
+        .logo-text p {
+            margin: 5px 0 0 0;
+            font-size: 10px;
             color: var(--text-muted);
-            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-weight: 600;
         }
 
-        /* Premium Footer Waves */
-        .footer-waves {
+        .header-address {
+            text-align: right;
+            font-size: 11px;
+            color: var(--text-muted);
+            line-height: 1.5;
+            margin-top: 10px;
+        }
+
+        /* --- CONTENT AREA --- */
+        .content {
+            padding: 20px 60px 160px 60px; 
+        }
+
+        .main-title {
+            font-size: 44px;
+            color: var(--text-dark);
+            margin: 30px 0 10px 0;
+            font-weight: 700;
+            position: relative;
+        }
+
+        .main-title::after {
+            content: "";
+            display: block;
+            width: 100%;
+            height: 1px;
+            background: linear-gradient(to right, #dae3f0, transparent);
+            margin-top: 15px;
+        }
+
+        .section { margin-top: 35px; }
+        .section-header { display: flex; align-items: center; gap: 12px; }
+        .section-title { font-size: 26px; color: var(--text-dark); margin: 0; font-weight: 600; }
+        .payment-icon { width: 30px; height: 30px; fill: var(--primary-blue); }
+        .section-text { font-size: 17px; color: #444; margin: 10px 0 0 0; line-height: 1.6; max-width: 95%; }
+
+        /* --- FOOTER SECTION --- */
+        .footer-container {
             position: absolute;
             bottom: 0;
-            left: 0;
             width: 100%;
-            line-height: 0;
+            height: 180px;
+            pointer-events: none;
         }
 
-        .footer-waves svg {
-            position: relative;
-            display: block;
-            width: calc(100% + 1.3px);
-            height: 150px;
-        }
+        .wave-svg { position: absolute; bottom: 0; width: 100%; height: auto; }
 
-        .footer-content {
+        .footer-branding {
             position: absolute;
-            bottom: 15px;
-            width: 100%;
+            bottom: 25px;
+            left: 50%;
+            transform: translateX(-50%);
             display: flex;
             flex-direction: column;
             align-items: center;
+            gap: 5px;
+            color: white;
             z-index: 10;
         }
 
-        .footer-logo {
-            width: 130px;
-            filter: brightness(1.1);
+        .footer-logo-img {
+            height: 40px; /* Small version for footer */
+            width: auto;
+            filter: brightness(0) invert(1); /* Makes logo white to sit on blue wave */
+            opacity: 0.9;
         }
 
-        .footer-tagline {
-            font-size: 0.6rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: rgba(255, 255, 255, 0.8);
-            margin-top: 5px;
-        }
+        .footer-branding h2 { font-size: 20px; margin: 0; font-weight: 600; }
+        .footer-branding h2 span { color: var(--accent-orange); }
+
+        .accent-star { position: absolute; bottom: 25px; right: 30px; z-index: 11; opacity: 0.5; }
     </style>
 </head>
 <body>
 
-    <div class="poster">
+    <div class="document-card">
         <header class="header">
-            <img src="logo.png" alt="EduSpherix Logo" class="logo">
-            <h1 class="main-heading">Terms and Conditions</h1>
+            <div class="logo-group">
+                <img src="https://eduspherix.co.in/logo.jpeg" alt="EduSpherix Logo" class="logo-img">
+                
+                <div class="logo-text">
+                    <h1>Edu<span>Spherix</span></h1>
+                    <p>Innovative Academic Management</p>
+                </div>
+            </div>
+
+            <div class="header-address">
+                                contact@eduspherix.co.in
+            </div>
         </header>
 
         <main class="content">
-            <section class="term-item">
-                <h2>1. Acceptance of Terms</h2>
-                <p>By using EduSpherix services, users agree to comply with these terms.</p>
-            </section>
+            <h1 class="main-title">Terms and Conditions</h1>
 
-            <section class="term-item">
-                <h2>2. User Responsibilities</h2>
-                <p>Users must not misuse the system or attempt unauthorized access.</p>
-            </section>
+            <div class="section">
+                <div class="section-header">
+                    <h2 class="section-title">1. Acceptance of Terms</h2>
+                </div>
+                <p class="section-text">By accessing and using EduSpherix services, users acknowledge that they have read, understood, and agree to be bound by these formal terms of service.</p>
+            </div>
 
-            <section class="term-item">
-                <h2>3. Payment</h2>
-                <p>Services are provided based on agreed payment plans.</p>
-            </section>
+            <div class="section">
+                <div class="section-header">
+                    <h2 class="section-title">2. User Responsibilities</h2>
+                </div>
+                <p class="section-text">Users are responsible for maintaining the confidentiality of their account credentials and must not engage in any activity that compromises system security.</p>
+            </div>
 
-            <section class="term-item">
-                <h2>4. Limitation of Liability</h2>
-                <p>EduSpherix shall not be liable for indirect losses due to system downtime.</p>
-            </section>
+            <div class="section">
+                <div class="section-header">
+                    <h2 class="section-title">3. Payment</h2>
+                    <svg class="payment-icon" viewBox="0 0 24 24"><path d="M20 4H4C2.89 4 2.01 4.89 2.01 6L2 18C2 19.11 2.89 20 4 20H20C21.11 20 22 19.11 22 18V6C22 4.89 21.11 4 20 4ZM20 18H4V12H20V18ZM20 8H4V6H20V8Z"/></svg>
+                </div>
+                <p class="section-text">Services are provided on a subscription basis. All payments must be processed via our secured authorized payment gateways and are subject to local tax regulations.</p>
+            </div>
 
-            <section class="term-item">
-                <h2>5. Modification</h2>
-                <p>We reserve the right to modify these terms when necessary.</p>
-            </section>
+            <div class="section">
+                <div class="section-header">
+                    <h2 class="section-title">4. Limitation of Liability</h2>
+                </div>
+                <p class="section-text">EduSpherix shall not be held liable for any indirect, incidental, or consequential damages resulting from any interruption of service or data loss.</p>
+            </div>
         </main>
 
-        <div class="footer-waves">
-            <svg viewBox="0 0 500 150" preserveAspectRatio="none">
-                <path d="M0.00,49.98 C150.00,150.00 349.20,-50.00 500.00,49.98 L500.00,150.00 L0.00,150.00 Z" style="stroke: none; fill: #0056b3;"></path>
-                <path d="M0.00,80.00 C200.00,120.00 300.00,20.00 500.00,90.00 L500.00,150.00 L0.00,150.00 Z" style="stroke: none; fill: #f39200; opacity: 0.7;"></path>
-                <path d="M0.00,100.00 C150.00,140.00 350.00,60.00 500.00,110.00 L500.00,150.00 L0.00,150.00 Z" style="stroke: none; fill: #00a8ff; opacity: 0.4;"></path>
+        <div class="footer-container">
+            <svg class="wave-svg" viewBox="0 0 1440 320" xmlns="http://www.w3.org/2000/svg">
+                <path fill="#1a3a6b" d="M0,224L60,213.3C120,203,240,181,360,186.7C480,192,600,224,720,224C840,224,960,192,1080,176C1200,160,1320,160,1380,160L1440,160L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"></path>
+                <path fill="#f39223" fill-opacity="0.7" d="M0,288L60,266.7C120,245,240,203,360,202.7C480,203,600,245,720,250.7C840,256,960,224,1080,213.3C1200,203,1320,213,1380,218.7L1440,224L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"></path>
             </svg>
             
-            <div class="footer-content">
-                <img src="logo.png" alt="EduSpherix" class="footer-logo">
-                <p class="footer-tagline">Innovative Academic Management</p>
+            <div class="footer-branding">
+                <img src="https://eduspherix.co.in/logo.jpeg" alt="" class="footer-logo-img">
+                <h2>Edu<span>Spherix</span></h2>
+            </div>
+
+            <div class="accent-star">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="white">
+                    <path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z"/>
+                </svg>
             </div>
         </div>
     </div>
