@@ -1,37 +1,179 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Terms & Conditions - EduSpherix</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduSpherix - Terms and Conditions</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-blue: #0056b3;
+            --accent-orange: #f39200;
+            --text-dark: #1a1a1a;
+            --text-muted: #4a4a4a;
+            --bg-light: #fdfdfb;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #e0e5ec;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        /* Poster Container */
+        .poster {
+            width: 100%;
+            max-width: 700px;
+            background: var(--bg-light);
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            overflow: hidden;
+            position: relative;
+            padding-bottom: 120px; /* Space for footer waves */
+        }
+
+        /* Header Styles */
+        .header {
+            padding: 40px 40px 20px 40px;
+            text-align: left;
+        }
+
+        .logo {
+            width: 350px; /* Adjust size as needed */
+            height: auto;
+            margin-bottom: 5px;
+        }
+
+        .main-heading {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            border-bottom: 2px solid #eee;
+            padding-bottom: 5px;
+            margin-bottom: 30px;
+        }
+
+        /* Content Sections */
+        .content {
+            padding: 0 45px;
+        }
+
+        .term-item {
+            margin-bottom: 25px;
+        }
+
+        .term-item h2 {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 6px;
+        }
+
+        .term-item p {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: var(--text-muted);
+            font-weight: 400;
+        }
+
+        /* Premium Footer Waves */
+        .footer-waves {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            line-height: 0;
+        }
+
+        .footer-waves svg {
+            position: relative;
+            display: block;
+            width: calc(100% + 1.3px);
+            height: 150px;
+        }
+
+        .footer-content {
+            position: absolute;
+            bottom: 15px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            z-index: 10;
+        }
+
+        .footer-logo {
+            width: 130px;
+            filter: brightness(1.1);
+        }
+
+        .footer-tagline {
+            font-size: 0.6rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: rgba(255, 255, 255, 0.8);
+            margin-top: 5px;
+        }
+    </style>
 </head>
+<body>
 
-<body style="font-family: Arial; padding: 20px; line-height: 1.6;">
+    <div class="poster">
+        <header class="header">
+            <img src="logo.png" alt="EduSpherix Logo" class="logo">
+            <h1 class="main-heading">Terms and Conditions</h1>
+        </header>
 
-<h1>Terms and Conditions - EduSpherix</h1>
+        <main class="content">
+            <section class="term-item">
+                <h2>1. Acceptance of Terms</h2>
+                <p>By using EduSpherix services, users agree to comply with these terms.</p>
+            </section>
 
-<h2>1. Acceptance of Terms</h2>
-<p>
-By using EduSpherix services, users agree to comply with these terms.
-</p>
+            <section class="term-item">
+                <h2>2. User Responsibilities</h2>
+                <p>Users must not misuse the system or attempt unauthorized access.</p>
+            </section>
 
-<h2>2. User Responsibilities</h2>
-<p>
-Users must not misuse the system or attempt unauthorized access.
-</p>
+            <section class="term-item">
+                <h2>3. Payment</h2>
+                <p>Services are provided based on agreed payment plans.</p>
+            </section>
 
-<h2>3. Payment</h2>
-<p>
-Services are provided based on agreed payment plans.
-</p>
+            <section class="term-item">
+                <h2>4. Limitation of Liability</h2>
+                <p>EduSpherix shall not be liable for indirect losses due to system downtime.</p>
+            </section>
 
-<h2>4. Limitation of Liability</h2>
-<p>
-EduSpherix shall not be liable for indirect losses due to system downtime.
-</p>
+            <section class="term-item">
+                <h2>5. Modification</h2>
+                <p>We reserve the right to modify these terms when necessary.</p>
+            </section>
+        </main>
 
-<h2>5. Modification</h2>
-<p>
-We reserve the right to modify these terms when necessary.
-</p>
+        <div class="footer-waves">
+            <svg viewBox="0 0 500 150" preserveAspectRatio="none">
+                <path d="M0.00,49.98 C150.00,150.00 349.20,-50.00 500.00,49.98 L500.00,150.00 L0.00,150.00 Z" style="stroke: none; fill: #0056b3;"></path>
+                <path d="M0.00,80.00 C200.00,120.00 300.00,20.00 500.00,90.00 L500.00,150.00 L0.00,150.00 Z" style="stroke: none; fill: #f39200; opacity: 0.7;"></path>
+                <path d="M0.00,100.00 C150.00,140.00 350.00,60.00 500.00,110.00 L500.00,150.00 L0.00,150.00 Z" style="stroke: none; fill: #00a8ff; opacity: 0.4;"></path>
+            </svg>
+            
+            <div class="footer-content">
+                <img src="logo.png" alt="EduSpherix" class="footer-logo">
+                <p class="footer-tagline">Innovative Academic Management</p>
+            </div>
+        </div>
+    </div>
 
 </body>
 </html>
