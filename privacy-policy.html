@@ -5,36 +5,30 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Privacy Policy - EduSpherix</title>
-<link rel="stylesheet" href="styles.css"
-
 
   <link rel="stylesheet" href="styles.css">
   <link rel="icon" href="favicon.png">
 
   <script src="https://cdn.tailwindcss.com"></script>
 
-  <!-- YOUR EXISTING CSS (UNCHANGED) -->
   <style>
     body {
         font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 0;
         background-color: #f0f0f0;
     }
 
     .container {
         width: 800px;
+        max-width: 95%;
         margin: 30px auto;
         background-color: #fff;
         border-radius: 5px;
         box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
         overflow: hidden;
-        position: relative;
     }
 
     .header {
-        padding: 30px 40px 10px 40px;
-        position: relative;
+        padding: 30px 40px 10px;
         display: flex;
         align-items: center;
     }
@@ -42,6 +36,7 @@
     .logo-container {
         display: flex;
         align-items: center;
+        flex-wrap: wrap;
     }
 
     .logo-img {
@@ -51,7 +46,6 @@
 
     .logo-text h1 {
         color: #21519b;
-        margin: 0;
         font-size: 48px;
         font-weight: bold;
     }
@@ -75,115 +69,108 @@
         text-align: center;
         font-size: 32px;
         color: #1e4d92;
+        font-weight: bold;
     }
 
     .content h3 {
         color: #1e4d92;
+        font-weight: bold;
         margin-top: 20px;
     }
 
-    .contact-info {
-        margin-top: 30px;
+    @media (max-width: 768px) {
+        .header {
+            flex-direction: column;
+            padding: 20px;
+        }
+
+        .logo-text h1 {
+            font-size: 32px;
+        }
+
+        .content {
+            padding: 20px;
+        }
     }
   </style>
 </head>
 
 <body class="bg-gray-50 text-gray-900 font-sans">
 
-<nav class="sticky top-0 z-50 bg-white shadow-md lg-50">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center py-4 gap-3">
-                <div class="flex items-center">
-                    <a href="#" class="text-2xl font-bold">
-                        <span class="text-deep-blue">Edu</span><span class="text-brand-orange">Spherix</span>
-                    </a>
-                </div>
-                <div class="flex items-center justify-between w-full">
+<!-- NAVBAR -->
+<nav class="sticky top-0 z-50 bg-white shadow-md">
+  <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
 
-    <!-- Nav Links -->
-    <div class="hidden md:flex space-x-4 ml-8">
+    <h1 class="text-2xl font-bold">
+      <span class="text-deep-blue">Edu</span>
+      <span class="text-brand-orange">Spherix</span>
+    </h1>
 
-        <a href="file:///C:/Users/JYOTI/OneDrive/Desktop/EduSpherix/index.html" class="nav-btn">Home</a>
+    <!-- Desktop Menu -->
+    <div class="hidden md:flex space-x-6 items-center">
 
-        <a href="/" class="nav-btn">Features</a>
+      <a href="https://eduspherix.co.in" class="nav-btn">Home</a>
+      <a href="https://eduspherix.co.in/#features" class="nav-btn">Features</a>
+      <a href="https://eduspherix.co.in/#modules" class="nav-btn">Modules</a>
+      <a href="https://eduspherix.co.in/#pricing" class="nav-btn">Pricing</a>
 
-        <a href="/" class="nav-btn">Modules</a>
+      <!-- Contact -->
+      <div class="relative">
+        <button id="contactBtn" class="nav-btn">Contact</button>
 
-        <a href="/" class="nav-btn">Pricing</a>
-
-        <a href="/" id="contactBtn" class="nav-btn">Contact</a>
-
-        <div id="contactDropdown" class="contact-dropdown">
-            <p>📞 +91 8123286405</p>
-            <p>📧support@eduspherix.co.in</p>
+                  
         </div>
+      </div>
 
     </div>
 
-    <!-- Book Demo Button -->
-    <div class="flex items-center space-x-4">
-        <a href="#book-demo"
-           class="bg-brand-orange text-white px-4 py-2 rounded-lg hover:bg-orange-600 transition">
-           Book Demo
-        </a>
-    </div>
+    <button id="mobile-menu-button"
+  class="md:hidden flex items-center justify-center w-10 h-10 rounded-lg 
+         hover:bg-gray-100 transition duration-300 focus:outline-none">
 
-</div>
-                    <div class="md:hidden">
-                        <button class="text-gray-700 focus:outline-none" id="mobile-menu-button">
-                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                            </svg>
-                        </button>
-                    </div>
-                </div>
-            </div>
-            <div class="md:hidden hidden" id="mobile-menu">
-  <div class="px-4 pt-4 pb-4 space-y-3 bg-gray-50">
+  <svg xmlns="http://www.w3.org/2000/svg" 
+       class="w-6 h-6 text-gray-700"
+       fill="none" viewBox="0 0 24 24" stroke="currentColor">
+       
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+          d="M4 6h16M4 12h16M4 18h16" />
+  </svg>
 
-    <!-- Home -->
-    <a href="/"
-       class="mobile-btn">
+</button>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="hidden md:hidden px-4 pb-4 bg-white space-y-3">
+
+    <a href="https://eduspherix.co.in"
+       class="block text-center bg-gray-100 py-2 rounded-lg font-medium">
        Home
     </a>
 
-    <!-- Features -->
-    <a href="/"
-       class="mobile-btn">
+    <a href="https://eduspherix.co.in/#features"
+       class="block text-center bg-gray-100 py-2 rounded-lg font-medium">
        Features
     </a>
 
-    <!-- Modules -->
-    <a href="/"
-       class="mobile-btn">
+    <a href="https://eduspherix.co.in/#modules"
+       class="block text-center bg-gray-100 py-2 rounded-lg font-medium">
        Modules
     </a>
 
-    <!-- Pricing -->
-    <a href="/"
-       class="mobile-btn">
+    <a href="https://eduspherix.co.in/#pricing"
+       class="block text-center bg-gray-100 py-2 rounded-lg font-medium">
        Pricing
     </a>
 
-    <!-- Contact Button -->
-    <a href="/" class="mobile-btn">Contact</a>
+     <a href="https://eduspherix.co.in/#contact"
+       class="block text-center bg-gray-100 py-2 rounded-lg font-medium">
+       contact
+    </a>
 
-<div id="contactDropdown" class="contact-dropdown">
-  <p>📞 +91 8123286405</p>
-  <p>📧 support@eduspherix.co.in</p>
-</div>
 
-    
   </div>
-</div>
-                </div>
-            </div>
-        </div>
-    </nav>
+</nav>
 
-
-
-<!-- ✅ BACK BUTTON -->
+<!-- BACK BUTTON -->
 <div class="max-w-6xl mx-auto px-4 mt-6">
   <button onclick="window.location.href='https://eduspherix.co.in'"
     class="flex items-center gap-2 text-sm font-medium text-gray-700 
@@ -193,65 +180,62 @@
   </button>
 </div>
 
-<!-- ✅ YOUR ORIGINAL CONTENT (UNCHANGED DESIGN) -->
+<!-- CONTENT -->
 <div class="container">
 
-    <div class="header">
-        <div class="logo-container">
-            <img src="logo.png" class="logo-img">
-            <div class="logo-text">
-                <h1>Edu<span>Spherix</span></h1>
-                <p>Innovative Academic Management</p>
-            </div>
-        </div>
+  <div class="header">
+    <div class="logo-container">
+      <img src="logo.png" class="logo-img">
+      <div class="logo-text">
+        <h1>Edu<span>Spherix</span></h1>
+        <p>Innovative Academic Management</p>
+      </div>
     </div>
+  </div>
 
-    <div class="content">
-        <h2>Privacy Policy</h2>
+  <div class="content">
+    <h2>Privacy Policy</h2>
 
-        <p>This Privacy Policy explains how EduSpherix collects and uses data.</p>
+    <p>This Privacy Policy explains how EduSpherix collects and uses data.</p>
 
-        <h3>1. Information Collected</h3>
-        <p>We collect student information, staff information, and parent contact details necessary for school operations.</p>
+    <h3>1. Information Collected</h3>
+    <p>We collect student information, staff information, and parent contact details necessary for school operations.</p>
 
-        <h3>2. Data Usage</h3>
-        <p>Data is used strictly for school administration and reporting purposes.</p>
+    <h3>2. Data Usage</h3>
+    <p>Data is used strictly for school administration and reporting purposes.</p>
 
-        <h3>3. Data Security</h3>
-        <p>We implement reasonable technical measures to protect data from unauthorized access.</p>
+    <h3>3. Data Security</h3>
+    <p>We implement reasonable technical measures to protect data from unauthorized access.</p>
 
-        <h3>4. Data Sharing</h3>
-        <p>We do not sell or share personal data with third parties except as required by law.</p>
+    <h3>4. Data Sharing</h3>
+    <p>We do not sell or share personal data with third parties except as required by law.</p>
 
-        <h3>5. Changes to Policy</h3>
-        <p>We reserve the right to update this policy as required.</p>
+    <h3>5. Changes to Policy</h3>
+    <p>We reserve the right to update this policy as required.</p>
 
-        <div class="contact-info">
-            <h3>Contact</h3>
-            <p>EduSpherix</p>
-            <p>support@eduspherix.co.in</p>
-            <p>8861639473</p>
-        </div>
+    <div class="contact-info">
+      <h3>Contact</h3>
+      <p>EduSpherix</p>
+      <p>
+  <a href="mailto:support@eduspherix.co.in" 
+     class="text-blue-600 hover:underline">
+     support@eduspherix.co.in
+  </a>
+</p>
     </div>
+  </div>
 
 </div>
 
-<!-- ✅ YOUR MAIN WEBSITE FOOTER (FULL SAME) -->
-<footer class="bg-blue-900 text-white py-6">
-  <div class="max-w-6xl mx-auto px-6 text-center">
-
-    <h2 class="text-2xl font-semibold mb-2">EduSpherix</h2>
-    <p class="text-sm mb-3">Innovative School Management</p>
-
-    <p id="dateTime" class="text-sm font-medium"></p>
-
-    <p class="text-xs mt-3 text-gray-300">
-      © 2026 EduSpherix. All Rights Reserved.
-    </p>
-
-  </div>
+<!-- FOOTER -->
+<footer class="bg-blue-900 text-white py-6 text-center">
+  <h2 class="text-2xl font-semibold">EduSpherix</h2>
+  <p>Innovative School Management</p>
+  <p id="dateTime"></p>
+  <p class="text-sm mt-2">© 2026 EduSpherix. All Rights Reserved.</p>
 </footer>
 
+<!-- DATE SCRIPT -->
 <script>
 function updateDateTime() {
   const now = new Date();
@@ -261,6 +245,24 @@ function updateDateTime() {
 }
 setInterval(updateDateTime, 1000);
 updateDateTime();
+</script>
+
+<!-- MENU + CONTACT SCRIPT -->
+<script>
+const btn = document.getElementById("mobile-menu-button");
+const menu = document.getElementById("mobile-menu");
+const contactBtn = document.getElementById("contactBtn");
+const contactDropdown = document.getElementById("contactDropdown");
+
+// mobile toggle
+btn.addEventListener("click", () => {
+  menu.classList.toggle("hidden");
+});
+
+// contact dropdown
+contactBtn.addEventListener("click", () => {
+  contactDropdown.classList.toggle("hidden");
+});
 </script>
 
 </body>
