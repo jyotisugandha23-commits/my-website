@@ -27,17 +27,22 @@
         overflow: hidden;
     }
 
-    .header {
-        padding: 30px 40px 10px;
-        display: flex;
-        align-items: center;
-    }
+   .header {
+    padding: 30px 20px;
+    display: flex;
+    justify-content: center;   /* ✅ center whole block */
+}
 
-    .logo-container {
-        display: flex;
-        align-items: center;
-        flex-wrap: wrap;
-    }
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    justify-content: center;   /* ✅ center horizontally */
+}
+
+.logo-text {
+    text-align: center;        /* ✅ center text */
+}
 
     .logo-img {
         width: 120px;
@@ -79,19 +84,37 @@
     }
 
     @media (max-width: 768px) {
-        .header {
-            flex-direction: column;
-            padding: 20px;
-        }
-
-        .logo-text h1 {
-            font-size: 32px;
-        }
-
-        .content {
-            padding: 20px;
-        }
+    .header {
+        flex-direction: column;
+        padding: 20px;
     }
+
+    .logo-container {
+        flex-direction: column;   /* stack logo + text */
+    }
+
+    .logo-text h1 {
+        font-size: 28px;
+    }
+
+    .content {
+        padding: 20px;
+    }
+}
+.footer-branding {
+    position: absolute;
+    bottom: 25px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 5px;
+    color: white;
+    z-index: 10;
+    width: 100%;
+}
   </style>
 </head>
 
@@ -227,14 +250,25 @@
 
 </div>
 
-<!-- FOOTER -->
-<footer class="bg-blue-900 text-white py-6 text-center">
-  <h2 class="text-2xl font-semibold">EduSpherix</h2>
-  <p>Innovative School Management</p>
-  <p id="dateTime"></p>
-  <p class="text-sm mt-2">© 2026 EduSpherix. All Rights Reserved.</p>
-</footer>
+<footer class="bg-blue-900 text-white py-6 mt-10">
+  <div class="w-full text-center">
 
+    <!-- 🔥 PERFECT CENTER -->
+    <h2 class="text-2xl font-semibold">
+      <span class="text-white">Edu</span>
+      <span class="text-orange-400">Spherix</span>
+    </h2>
+
+    <p class="text-sm mt-2">Innovative School Management</p>
+
+    <p id="dateTime" class="text-sm mt-2"></p>
+
+    <p class="text-xs mt-3 text-gray-300">
+      © 2026 EduSpherix. All Rights Reserved.
+    </p>
+
+  </div>
+</footer>
 <!-- DATE SCRIPT -->
 <script>
 function updateDateTime() {
