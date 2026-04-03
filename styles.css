@@ -1203,3 +1203,13 @@ color:white;
     50%{transform: translateY(-5px);}
     100%{transform: translateY(0);}
 }
+.hero-image {
+  width: 100%;
+  margin-top: 20px;
+  display: flex;
+  justify-content: flex-start; /* ✅ move to LEFT */
+}
+.hero-image img {
+  width: 85%;   /* slightly smaller looks premium */
+  border-radius: 12px;
+}
