@@ -35,9 +35,18 @@ body {
     display: flex;
     align-items: center;
     gap: 12px;
+    justify-content: center;   /* ✅ centers horizontally */
+}
+@media(max-width:768px){
+    .logo-group{
+        flex-direction: column;   /* stack logo + text */
+        text-align: center;       /* center text */
+    }
+}
+.logo-text {
+    text-align: center;
 }
 
-/* 🔥 LOGO SAME AS PREVIOUS PAGE */
 .logo-text h1 {
     font-size: 38px;
     font-weight: bold;
@@ -197,7 +206,7 @@ class="bg-white px-4 py-2 rounded-full shadow hover:bg-gray-100">
 <header class="header">
 <div class="logo-group">
 
-<img src="logo.png" style="height:60px;">
+<img src="logo.png" style="height:110px;">
 
 <div class="logo-text">
 <h1><span class="edu">Edu</span><span class="spherix">Spherix</span></h1>
@@ -254,7 +263,8 @@ EduSpherix is not liable for service interruptions or data loss.
       Innovative School Management
     </p>
 
-    <p id="dateTime" class="text-sm mt-2 text-center"></p>
+    <p id="dateTime" class="text-sm mt-2"></p>
+
 
     <p class="text-xs mt-3 text-gray-300 text-center">
       © 2026 EduSpherix. All Rights Reserved.
@@ -280,15 +290,30 @@ document.getElementById("contactDropdownMobile").classList.toggle("hidden");
 };
 
 // DATE TIME
-function updateDateTime() {
-const now = new Date();
-const date = now.toLocaleDateString('en-IN',{weekday:'long',year:'numeric',month:'long',day:'numeric'});
-const time = now.toLocaleTimeString('en-IN');
-document.getElementById("dateTime").innerHTML = date + " | " + time;
-}
-setInterval(updateDateTime,1000);
-updateDateTime();
-</script>
+<p id="dateTime" class="text-sm mt-2 text-center"></p>
 
-</body>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+function updateDateTime() {
+    const now = new Date();
+    const date = now.toLocaleDateString('en-IN', {
+        weekday: 'long',
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric'
+    });
+    const time = now.toLocaleTimeString('en-IN');
+
+    const el = document.getElementById("dateTime");
+    if (el) {
+        el.innerHTML = date + " | " + time;
+    }
+}
+
+setInterval(updateDateTime, 1000);
+updateDateTime();
+
+});
+</script></body>
 </html>
