@@ -36,7 +36,7 @@
 <body class="bg-gray-50 text-gray-900 font-sans">
     <!-- Sticky Navbar -->
      
-    <nav class="sticky top-0 z-50 bg-white shadow-md lg-50">
+   <nav class="sticky top-0 z-50 backdrop-blur-xl bg-white/30 border-b border-white/20 shadow-lg"></nav>
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center py-4 gap-3">
                 <div class="flex items-center">
@@ -907,20 +907,22 @@ if (contactBtnMobile) {
 <!-- Three.js -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
 
-<!-- Vanta Birds -->
-<script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.birds.min.js"></script>
+<!-- Vanta Rings -->
+<script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.rings.min.js"></script>
 
 <script>
-VANTA.BIRDS({
-  el: "#home",   // we will connect this to your hero section
+VANTA.RINGS({
+  el: "#home",
   mouseControls: true,
   touchControls: true,
   gyroControls: false,
-  minHeight: 200.00,
-  minWidth: 200.00,
-  scale: 1.00,
-  scaleMobile: 1.00,
-  backgroundColor: 0x0f0c29
+
+  color: 0x3b82f6,        // blue rings 
+  backgroundColor: 0x0b1120, // dark premium background
+
+  amplitudeFactor: 1.5,
+  ringSize: 1.2,
+  rotation: 0.5
 })
 </script>
 <script>
