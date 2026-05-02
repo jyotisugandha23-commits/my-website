@@ -59,7 +59,9 @@
 
         <a href="#" id="contactBtn" class="nav-btn">Contact</a>
 
-        <div id="contactDropdown" class="contact-dropdown">
+        <a href="https://forms.gle/7hNhKedqbd7WiU5q9" target="_blank" class="nav-btn">Hiring</a>
+
+        <div id="contactDropdown" class="contact-dropdown hidden">
             <p>📞 +91 8123286405</p>
             <p>📧support@eduspherix.co.in</p>
         </div>
@@ -112,11 +114,15 @@
     </a>
 
     <!-- Contact Button -->
-    <a href="#contact" class="mobile-btn">Contact</a>
+    <a href="#" id="contactBtnMobile" class="mobile-btn">Contact</a>
 
-<div id="contactDropdown" class="contact-dropdown">
-  <p>📧 support@eduspherix.co.in</p>
+<div id="contactDropdownMobile" class="contact-dropdown hidden">
+    <p>📞 +91 8123286405</p>
+    <p>📧 support@eduspherix.co.in</p>
 </div>
+
+ <!-- Hiring -->
+     <a href="https://forms.gle/7hNhKedqbd7WiU5q9" target="_blank" class="mobile-btn">Hiring</a>
 
     
   </div>
@@ -879,28 +885,31 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 </script>
 <script>
-const contactBtn = document.getElementById("contactBtn");
-const contactBtnMobile = document.getElementById("contactBtnMobile");
+document.addEventListener("DOMContentLoaded", function () {
 
-const contactDropdown = document.getElementById("contactDropdown");
-const contactDropdownMobile = document.getElementById("contactDropdownMobile");
+  const contactBtn = document.getElementById("contactBtn");
+  const contactDropdown = document.getElementById("contactDropdown");
 
-function toggleDropdown(e, dropdown) {
-    e.preventDefault();
-    dropdown.classList.toggle("show");
-}
+  const contactBtnMobile = document.getElementById("contactBtnMobile");
+  const contactDropdownMobile = document.getElementById("contactDropdownMobile");
 
-if (contactBtn) {
-    contactBtn.addEventListener("click", (e) => {
-        toggleDropdown(e, contactDropdown);
+  // Desktop
+  if (contactBtn && contactDropdown) {
+    contactBtn.addEventListener("click", function(e) {
+      e.preventDefault();
+      contactDropdown.classList.toggle("hidden");
     });
-}
+  }
 
-if (contactBtnMobile) {
-    contactBtnMobile.addEventListener("click", (e) => {
-        toggleDropdown(e, contactDropdownMobile);
+  // Mobile
+  if (contactBtnMobile && contactDropdownMobile) {
+    contactBtnMobile.addEventListener("click", function(e) {
+      e.preventDefault();
+      contactDropdownMobile.classList.toggle("hidden");
     });
-}
+  }
+
+});
 </script>
 <!-- Floating Buttons -->
 
@@ -950,15 +959,7 @@ videoPopup.addEventListener("click", (e) => {
   }
 });
 </script>
-<script>
-const contactBtn = document.getElementById("contactBtnMobile");
-const contactDropdown = document.getElementById("contactDropdownMobile");
 
-contactBtn.addEventListener("click", function () {
-  contactDropdown.classList.toggle("hidden");
-  contactBtn.classList.toggle("active");
-});
-</script>
 
 <script>
 const mobileBtns = document.querySelectorAll(".mobile-btn");
