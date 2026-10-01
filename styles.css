@@ -674,7 +674,7 @@ background:#f97316;
 color:white;
 box-shadow:0 4px 10px rgba(0,0,0,0.2);
 }
-.nav-btn{/* ---------------- GLOBAL ---------------- */
+/* ---------------- GLOBAL ---------------- */
 
 html{
 scroll-behavior:smooth;
@@ -1127,6 +1127,7 @@ align-items:center;
 display:none;
 box-shadow:0 4px 10px rgba(0,0,0,0.1);
 }
+}
 
 .nav-links.active{
 display:flex;
@@ -1141,7 +1142,7 @@ width:90%;
 text-align:center;
 }
 
-}
+.nav-btn{
 padding:10px 18px;
 border-radius:12px;
 background:#f3f4f6;
