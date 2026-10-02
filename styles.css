@@ -189,10 +189,7 @@ button {
 }
 
 /* =========================================================
-   Navigation
-   ========================================================= */
-
-
+   Navigation*/
 nav.sticky {
   position: sticky;
   top: 0;
@@ -269,6 +266,316 @@ nav .bg-brand-orange:hover {
   background: linear-gradient(135deg, var(--orange-dark), #c2410c) !important;
   transform: translateY(-2px);
   box-shadow: 0 10px 20px rgba(249, 115, 22, 0.25);
+}
+/* 
+   FINAL RESPONSIVE NAVBAR FIX */
+
+/* ---------- DESKTOP ---------- */
+/* =========================================================
+   FINAL NAVBAR + HERO BUTTON POLISH
+   ========================================================= */
+
+/* ---------- DESKTOP: Gap between Career and Book Demo ---------- */
+
+@media (min-width: 768px) {
+
+  nav.sticky #w-fulls + div {
+    margin-left: 32px;
+  }
+
+}
+
+
+/* ---------- MOBILE: Request Free Demo button ---------- */
+
+@media (max-width: 767px) {
+
+  #home a[href="#bookDemo"] {
+    width: auto !important;
+    max-width: fit-content;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+  }
+
+}
+
+
+/* ---------- VERY SMALL PHONES ---------- */
+
+@media (max-width: 380px) {
+
+  #home a[href="#bookDemo"] {
+    padding-left: 20px;
+    padding-right: 20px;
+    font-size: 15px;
+  }
+
+}
+@media (min-width: 768px) {
+
+  /* Keep desktop navbar in one clean row */
+  nav.sticky .max-w-6xl > div:first-child {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 32px;
+  }
+
+  /* Logo */
+  nav.sticky .max-w-6xl > div:first-child > div:first-child {
+    flex-shrink: 0;
+  }
+
+  /* Desktop navigation wrapper */
+  nav.sticky #w-fulls {
+    display: flex !important;
+    align-items: center;
+    justify-content: space-between;
+    flex: 1;
+    min-width: 0;
+  }
+
+  /* Desktop Book Demo */
+  nav.sticky #w-fulls + div {
+    flex-shrink: 0;
+  }
+
+  /* Hamburger must stay hidden */
+  #mobile-menu-button {
+    display: none;
+  }
+
+  #mobile-menu {
+    display: none !important;
+  }
+}
+
+
+/* =========================================================
+   TABLET + MOBILE
+   ========================================================= */
+
+@media (max-width: 767px) {
+
+  /* Navbar height */
+  nav.sticky {
+    min-height: 64px;
+  }
+
+  /* Main navbar container */
+  nav.sticky .max-w-6xl {
+    width: 100%;
+    max-width: 100%;
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+
+  /* Main navbar row */
+  nav.sticky .max-w-6xl > div:first-child {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding-top: 12px !important;
+    padding-bottom: 12px !important;
+  }
+
+  /* Logo */
+  nav.sticky .text-2xl {
+    font-size: 1.35rem;
+    line-height: 1;
+    white-space: nowrap;
+  }
+
+  /* -------------------------------------------------------
+     HIDE DESKTOP NAV LINKS
+     ------------------------------------------------------- */
+
+  nav.sticky #w-fulls {
+    display: none !important;
+  }
+
+  /* Hide desktop Book Demo button */
+  nav.sticky #w-fulls + div {
+    display: none !important;
+  }
+
+  /* -------------------------------------------------------
+     SHOW HAMBURGER
+     ------------------------------------------------------- */
+
+  nav.sticky #mobile-menu-button {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+
+    width: 44px;
+    height: 44px;
+
+    padding: 0;
+
+    color: #1e3a8a;
+    background: rgba(255, 255, 255, 0.75);
+
+    border: 1px solid rgba(30, 58, 138, 0.12);
+    border-radius: 12px;
+
+    cursor: pointer;
+
+    transition:
+      background 0.25s ease,
+      transform 0.25s ease,
+      box-shadow 0.25s ease;
+  }
+
+  nav.sticky #mobile-menu-button:hover {
+    background: #ffffff;
+    transform: translateY(-1px);
+    box-shadow: 0 6px 18px rgba(30, 58, 138, 0.12);
+  }
+
+  nav.sticky #mobile-menu-button:active {
+    transform: scale(0.95);
+  }
+
+  nav.sticky #mobile-menu-button svg {
+    width: 24px;
+    height: 24px;
+  }
+
+
+  /* =======================================================
+     MOBILE MENU
+     ======================================================= */
+
+  #mobile-menu {
+    width: 100%;
+    border-top: 1px solid rgba(226, 232, 240, 0.8);
+    background: rgba(255, 255, 255, 0.96);
+
+    box-shadow: 0 12px 25px rgba(15, 23, 42, 0.08);
+  }
+
+  /* When JS removes "hidden" */
+  #mobile-menu:not(.hidden) {
+    display: block !important;
+  }
+
+  #mobile-menu > div {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    padding: 14px 16px 18px !important;
+
+    background: rgba(248, 250, 252, 0.98) !important;
+  }
+
+
+  /* =======================================================
+     MOBILE NAV BUTTONS
+     ======================================================= */
+
+  #mobile-menu .mobile-btn {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    width: 100%;
+    min-height: 46px;
+
+    padding: 11px 15px;
+
+    color: #334155;
+
+    font-size: 15px;
+    font-weight: 600;
+
+    background: #ffffff;
+
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+
+    transition:
+      color 0.2s ease,
+      background 0.2s ease,
+      transform 0.2s ease,
+      border-color 0.2s ease;
+  }
+
+  #mobile-menu .mobile-btn:hover {
+    color: #1e3a8a;
+    background: #f8fafc;
+    border-color: #bfdbfe;
+    transform: translateX(3px);
+  }
+
+  #mobile-menu .mobile-btn:active {
+    transform: scale(0.98);
+  }
+
+
+  /* =======================================================
+     MOBILE CONTACT DROPDOWN
+     ======================================================= */
+
+  #mobile-menu .contact-dropdown {
+    width: 100%;
+    margin: 0 !important;
+    padding: 10px 15px;
+
+    background: #ffffff;
+
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+
+    box-shadow: none;
+  }
+
+  #mobile-menu .contact-dropdown p {
+    margin: 5px 0;
+    font-size: 13px;
+    line-height: 1.5;
+  }
+
+  #mobile-menu .contact-dropdown::before {
+    display: none;
+  }
+}
+
+
+/* =========================================================
+   SMALL PHONES
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+  nav.sticky .max-w-6xl {
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+  }
+
+  nav.sticky .text-2xl {
+    font-size: 1.25rem;
+  }
+
+  nav.sticky #mobile-menu-button {
+    width: 42px;
+    height: 42px;
+  }
+
+  #mobile-menu > div {
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+  }
+
+  #mobile-menu .mobile-btn {
+    min-height: 44px;
+    font-size: 14px;
+  }
 }
 
 nav a.bg-brand-orange {
