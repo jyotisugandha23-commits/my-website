@@ -3779,3 +3779,111 @@ footer a:hover::after {
     }
 
 }
+/* ================================
+   PREMIUM FOOTER LINKS
+================================ */
+
+.site-footer {
+    text-align: center;
+    padding: 18px 20px 24px;
+}
+
+.footer-links {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.footer-links a {
+    position: relative;
+    text-decoration: none;
+
+    /* Dynamic EduSpherix gradient */
+    background: linear-gradient(
+        90deg,
+        #38BDF8 0%,
+        #60A5FA 35%,
+        #A78BFA 70%,
+        #38BDF8 100%
+    );
+
+    background-size: 250% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.2px;
+
+    transition:
+        background-position 0.5s ease,
+        transform 0.3s ease,
+        filter 0.3s ease;
+}
+
+/* Moving gradient */
+.footer-links a:hover {
+    background-position: 100% center;
+    transform: translateY(-2px);
+    filter: drop-shadow(0 0 8px rgba(56, 189, 248, 0.45));
+}
+
+/* Small animated underline */
+.footer-links a::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -5px;
+
+    width: 0;
+    height: 1.5px;
+
+    background: linear-gradient(
+        90deg,
+        #38BDF8,
+        #A78BFA
+    );
+
+    border-radius: 10px;
+
+    transform: translateX(-50%);
+    transition: width 0.35s ease;
+}
+
+.footer-links a:hover::after {
+    width: 100%;
+}
+
+/* Divider */
+.footer-divider {
+    color: rgba(148, 163, 184, 0.35);
+    font-size: 13px;
+    user-select: none;
+}
+
+
+/* ================================
+   MOBILE
+================================ */
+
+@media (max-width: 600px) {
+
+    .site-footer {
+        padding: 16px 15px 22px;
+    }
+
+    .footer-links {
+        gap: 9px;
+    }
+
+    .footer-links a {
+        font-size: 13px;
+    }
+
+    .footer-divider {
+        font-size: 12px;
+    }
+}
