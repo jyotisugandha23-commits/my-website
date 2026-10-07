@@ -354,31 +354,278 @@
     </div>                           </div>
         </div>
     </section>
+	
 
-    <!-- Animated Stats Counter Section -->
-    <section class="py-20 bg-gradient-to-r from-brand-green to-deep-blue text-white">
 	
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 class="text-3xl font-bold mb-10">Our Impact</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div>
-                    <div class="text-5xl font-bold counter" data-target="15">0</div>
-                    <p class="text-xl mt-4">Modules</p>
-                </div>
-                <div>
-                    <div class="text-5xl font-bold counter" data-target="1000">0</div>
-                    <p class="text-xl mt-4">Student Capacity</p>
-                </div>
-              <div class="text-center">
-    <h2 class="text-6xl font-bold">
-        <span class="counter" data-target="24">0</span>
-        <span class="text-6xl">/7</span>
-    </h2>
-    <p class="mt-2">Support</p>
-</div>
+<section class="impact-section" id="impact">
+
+    <!-- Ambient background -->
+    <div class="impact-orb impact-orb-1"></div>
+    <div class="impact-orb impact-orb-2"></div>
+    <div class="impact-orb impact-orb-3"></div>
+
+    <div class="impact-container">
+
+        <!-- Section Heading -->
+        <div class="impact-heading">
+
+            <span class="impact-eyebrow">
+                OUR IMPACT
+            </span>
+
+            <h2>
+                Technology that makes
+                <span>schools stronger.</span>
+            </h2>
+
+            <p>
+                Built to simplify school management, empower educators,
+                connect parents, and scale with growing institutions.
+            </p>
+
+            <div class="impact-heading-line"></div>
+
         </div>
-    </section>
-	
+
+
+        <!-- Impact Cards -->
+        <div class="impact-grid">
+
+
+            <!-- CARD 1 -->
+            <div class="impact-card">
+
+                <div class="impact-card-glow"></div>
+
+                <div class="impact-icon">
+                    <span>✦</span>
+                </div>
+
+                <div class="impact-number-wrap">
+
+                    <span
+                        class="impact-number"
+                        data-target="20"
+                        data-suffix="+">
+                        0
+                    </span>
+
+                </div>
+
+                <h3>Modules</h3>
+
+                <p>
+                    Powerful tools designed to manage
+                    every essential school operation.
+                </p>
+
+                <div class="impact-mini-line"></div>
+
+            </div>
+
+
+
+            <!-- CARD 2 -->
+            <div class="impact-card impact-card-featured">
+
+                <div class="impact-card-glow"></div>
+
+                <div class="impact-icon">
+                    <span>◉</span>
+                </div>
+
+                <div class="impact-number-wrap">
+
+                    <span
+                        class="impact-number"
+                        data-target="5000"
+                        data-suffix="+">
+                        0
+                    </span>
+
+                </div>
+
+                <h3>Student Capacity</h3>
+
+                <p>
+                    Designed to support growing schools
+                    without compromising performance.
+                </p>
+
+                <div class="impact-mini-line"></div>
+
+            </div>
+
+
+
+            <!-- CARD 3 -->
+            <div class="impact-card">
+
+                <div class="impact-card-glow"></div>
+
+                <div class="impact-icon">
+                    <span>⚡</span>
+                </div>
+
+                <div class="impact-number-wrap">
+
+                    <span class="impact-number-static">
+                        24/7
+                    </span>
+
+                </div>
+
+                <h3>Support</h3>
+
+                <p>
+                    Reliable assistance whenever your
+                    school needs us.
+                </p>
+
+                <div class="impact-mini-line"></div>
+
+            </div>
+
+        </div>
+
+
+        <!-- Bottom trust statement -->
+
+        <div class="impact-bottom">
+
+            <span class="impact-dot"></span>
+
+            <span>
+                Smart. Simple. Powerful.
+            </span>
+
+            <span class="impact-dot"></span>
+
+            <span>
+                Built for modern schools.
+            </span>
+
+        </div>
+
+    </div>
+
+</section>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+    const counters =
+        document.querySelectorAll(".impact-number");
+
+    const impactSection =
+        document.querySelector("#impact");
+
+    if (!impactSection || !counters.length) return;
+
+
+    let hasAnimated = false;
+
+
+    const animateCounter = (element) => {
+
+        const target =
+            parseInt(element.dataset.target);
+
+        const suffix =
+            element.dataset.suffix || "";
+
+        const duration = 1800;
+
+        const startTime =
+            performance.now();
+
+
+        const update = (currentTime) => {
+
+            const elapsed =
+                currentTime - startTime;
+
+            const progress =
+                Math.min(elapsed / duration, 1);
+
+
+            /* Smooth ease-out */
+            const eased =
+                1 - Math.pow(1 - progress, 4);
+
+
+            const currentValue =
+                Math.floor(target * eased);
+
+
+            element.textContent =
+                currentValue.toLocaleString("en-IN")
+                + suffix;
+
+
+            if (progress < 1) {
+
+                requestAnimationFrame(update);
+
+            } else {
+
+                element.textContent =
+                    target.toLocaleString("en-IN")
+                    + suffix;
+            }
+        };
+
+
+        requestAnimationFrame(update);
+    };
+
+
+    const observer =
+        new IntersectionObserver(
+
+            (entries) => {
+
+                entries.forEach(entry => {
+
+                    if (
+                        entry.isIntersecting &&
+                        !hasAnimated
+                    ) {
+
+                        hasAnimated = true;
+
+                        counters.forEach(
+                            (counter, index) => {
+
+                                setTimeout(
+                                    () => {
+                                        animateCounter(counter);
+                                    },
+                                    index * 180
+                                );
+
+                            }
+                        );
+
+                    }
+
+                });
+
+            },
+
+            {
+                threshold: 0.35
+            }
+        );
+
+
+    observer.observe(impactSection);
+
+});
+</script>
+<!-- =========================================================
+  OUR IMPACT
+========================================================= -->
 	
 	
 
@@ -2433,7 +2680,7 @@ mobileBtns.forEach(btn => {
   });
 });
 </script>
-		<footer class="site-footer">
+	<footer class="site-footer">
     <div class="footer-links">
         <a href="privacy-policy.html">Privacy Policy</a>
         <span class="footer-divider">|</span>
